@@ -7,11 +7,12 @@ int main()
 
 
 
-   Nivel nivel1;
-   nivel1.traerNivel(5,5,"Nivel1.dat");
+
     sf::RenderWindow Ventana(sf::VideoMode(800, 600), "SFML window");
     sf::RenderStates states;
     Ventana.setFramerateLimit(60);
+    Nivel nivel1;
+    nivel1.traerNivel(5,5,"Nivel1.dat");
 
 
 
@@ -35,9 +36,9 @@ int main()
         Ventana.clear();
 
         // Draw the sprite
-        nivel1.drawNivel( Ventana,states,5,5);
+      nivel1.drawNivel(nivel1,Ventana,states,5,5);
 
-        //Ventana.draw(fondo);
+        Ventana.draw(fondo);
 
       // nivel1.drawNivel( Ventana,states,5,5);
         // Update the window

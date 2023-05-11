@@ -45,7 +45,7 @@ class Celda:public sf::Drawable
 
 
 
-    void setTexture(int estadoActual);
+    void _setTexture();
     void setSprite();
     void setCelda(short int x,short int y,bool visible,bool pixel);
 
@@ -88,7 +88,7 @@ class Nivel {
          strcpy(_nombre, n);
          }
          Nivel();
-         void drawNivel(sf::RenderWindow& Ventana,sf::RenderStates states,short int F,short int C);
+         void drawNivel(Nivel nivel,sf::RenderWindow& Ventana,sf::RenderStates states,short int F,short int C);
          void CargarNivel(int F,int C,const char* nombre);
 };
 

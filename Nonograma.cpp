@@ -17,12 +17,12 @@ target.draw(_sprite,states);
 ///Celda-----------------------------
 Celda::Celda(){
 
-    this->_x=0;
-    this->_y=0;
-    this->_visible=false;
-    this-> _pixel=false;
-    this->_sprite.setPosition(_x,_y);
-    setTexture(estadoActual());
+    _x=0;
+    _y=0;
+    _visible=false;
+     _pixel=false;
+    _sprite.setPosition(_x,_y);
+  _setTexture();
 }
 
 void Celda::CargarCelda(){
@@ -43,7 +43,7 @@ short    int x;
    cin>>pixel;
    this->_pixel=pixel;
    this->_sprite.setPosition(_x,_y);
-    setTexture(estadoActual());
+    _setTexture();
 }
 void Celda::MostrarCelda(){
 
@@ -62,7 +62,7 @@ void Celda::setCelda(short int x,short int y,bool visible,bool pixel){
     this->_visible=visible;
     this-> _pixel=pixel;
     this->_sprite.setPosition(_x,_y);
-     setTexture(estadoActual());
+   _setTexture();
 }
 
 
@@ -101,23 +101,25 @@ bool Celda::getPixel()
 
 void  Celda::draw(sf::RenderTarget& target,sf::RenderStates states)const
 {
-    target.draw(_sprite,states);
+    target.draw(this->_sprite,states);
 }
 
-void Celda::setTexture(int estadoActual ){
+void Celda::_setTexture(){
+short int estadoActual=this->estadoActual();
 
-if (estadoActual==-1){
-    _texture.loadFromFile(celdaText[0]);
+if (
+    estadoActual==-1){
+  this->_texture.loadFromFile(celdaText[0]);
     }
     else if (estadoActual==0){
-
-       _texture.loadFromFile(celdaText[1]);
+  this->_texture.loadFromFile(celdaText[1]);
     }
     else {
-            _texture.loadFromFile(celdaText[2]);
+              this->_texture.loadFromFile(celdaText[2]);
     }
 
 }
+
 
 void Celda::setSprite(){
 _sprite.setTexture(_texture);
@@ -146,6 +148,7 @@ void Nivel::traerNivel(short int F,short int C,const char* nombre){
 	}
 	short int x=0;
 	short int y=0;
+	int cont =0;
     while(fread(&reg, sizeof reg, 1,pCeldas)==1){
           y++;
           if(y%C-1==0){
@@ -157,8 +160,10 @@ void Nivel::traerNivel(short int F,short int C,const char* nombre){
     this->_Level[x][y].setY(reg.getY());
     this->_Level[x][y].setVisible(reg.getVisible());
     this->_Level[x][y].setPixel(reg.getPixel());
+    cont++;
     }
-
+cout<<cont<<" Registros leidos"<<endl;
+system("pause");
 fclose(pCeldas);
 }
 
@@ -185,13 +190,10 @@ void Nivel::CargarNivel(int F,int C,const char* nombre){
      }
 fclose(pCeldas);
 }
-void Nivel::drawNivel(sf::RenderWindow &Ventana,sf::RenderStates states,short int F,short int C){
-       Celda Aux;
+void Nivel:: drawNivel(Nivel nivel,sf::RenderWindow& Ventana,sf::RenderStates states,short int F,short int C){
      for (short int x=0;x<F;x++){
 		for (short int y=0;y<C;y++){
-
-            Ventana.draw(_Level[x][y]._sprite,states);
-
+nivel._Level[x][y].draw(Ventana,states);
         }
      }
 }

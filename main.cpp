@@ -6,8 +6,9 @@ int main()
     Imagen fondo("fondo2.png");
 
 
+
     Nivel nivel1;
-    traerNivel(level1,5,5,"Nivel1.dat");
+    Nivel::traerNivel(nivel1,5,5,"Nivel1.dat");
     sf::RenderWindow Ventana(sf::VideoMode(800, 600), "SFML window");
     Ventana.setFramerateLimit(60);
 

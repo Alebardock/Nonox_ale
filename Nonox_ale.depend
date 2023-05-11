@@ -412,11 +412,11 @@
 	<SFML/Graphics/Drawable.hpp>
 	<SFML/Window/GlResource.hpp>
 
-1683797801 source:c:\users\aleja\onedrive\escritorio\nonox\celda.cpp
+1683798420 source:c:\users\aleja\onedrive\escritorio\nonox\celda.cpp
 	<iostream>
 	"Celda.h"
 
-1683797856 c:\users\aleja\onedrive\escritorio\nonox\celda.h
+1683800168 c:\users\aleja\onedrive\escritorio\nonox\celda.h
 	<SFML/Graphics.hpp>
 	<cstdlib>
 	<cstring>

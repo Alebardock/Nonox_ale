@@ -427,3 +427,18 @@
 	<stdlib.h>
 	<time.h>
 
+1683835716 source:c:\users\aleja\onedrive\escritorio\nonox\nonox_ale\nonograma.cpp
+	<iostream>
+	"Nonograma.h"
+
+1683835669 c:\users\aleja\onedrive\escritorio\nonox\nonox_ale\nonograma.h
+	<SFML/Graphics.hpp>
+	<cstdlib>
+	<cstring>
+	<iostream>
+	<array>
+	<vector>
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+

@@ -1,5 +1,5 @@
 #include <SFML/Graphics.hpp>
-#include "../Celda.h"
+#include "Nonograma.h"
 
 int main()
 {  /* CrearRegistroCelda();*/

@@ -48,8 +48,6 @@
 			<Add library="dxguid" />
 			<Add directory="C:/Program Files/CodeBlocks/SFML/lib" />
 		</Linker>
-		<Unit filename="../Celda.cpp" />
-		<Unit filename="../Celda.h" />
 		<Unit filename="../R (1).png" />
 		<Unit filename="../R.png" />
 		<Unit filename="../fondo2.png" />
@@ -63,6 +61,8 @@
 		<Unit filename="../sfml-system-d-2.dll" />
 		<Unit filename="../sfml-window-2.dll" />
 		<Unit filename="../sfml-window-d-2.dll" />
+		<Unit filename="Nonograma.cpp" />
+		<Unit filename="Nonograma.h" />
 		<Unit filename="cb.bmp" />
 		<Unit filename="main.cpp" />
 		<Extensions>

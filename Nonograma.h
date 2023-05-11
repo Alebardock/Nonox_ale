@@ -15,8 +15,7 @@ class Celda:public sf::Drawable
 {
 
     private:
-    sf::Sprite _sprite;
-    sf::Texture _texture;
+
     float _ancho=50;
     float _alto=50;
     short int _x;
@@ -28,7 +27,8 @@ class Celda:public sf::Drawable
     ///los posibles 3 archivos para los sprites de estado de celda
 
     public:
-
+    sf::Sprite _sprite;
+    sf::Texture _texture;
     Celda();
     void setX(const short int x);
     void setY(const short int y);
@@ -82,15 +82,15 @@ class Nivel {
 
 
     public:
+
          void traerNivel(short int F,short int C,const char* nombre);
          void setNombre( char *n){
          strcpy(_nombre, n);
          }
          Nivel();
-         void drawNivel(sf::RenderWindow Ventana,short int F,short int C);
-
+         void drawNivel(sf::RenderWindow& Ventana,sf::RenderStates states,short int F,short int C);
+         void CargarNivel(int F,int C,const char* nombre);
 };
-void CargarNivel(int F,int C,const char* nombre);
 
 
 ///NIVELES-----------------------------------------

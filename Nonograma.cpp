@@ -162,7 +162,7 @@ void Nivel::traerNivel(short int F,short int C,const char* nombre){
 fclose(pCeldas);
 }
 
-void CargarNivel(int F,int C,const char* nombre){
+void Nivel::CargarNivel(int F,int C,const char* nombre){
 
     Celda reg;
     FILE *pCeldas;
@@ -185,14 +185,16 @@ void CargarNivel(int F,int C,const char* nombre){
      }
 fclose(pCeldas);
 }
-void Nivel::drawNivel(sf::RenderWindow Ventana,short int F,short int C){
-
+void Nivel::drawNivel(sf::RenderWindow &Ventana,sf::RenderStates states,short int F,short int C){
+       Celda Aux;
      for (short int x=0;x<F;x++){
 		for (short int y=0;y<C;y++){
-            Ventana.draw(this->_Level[x][y]);
+
+            Ventana.draw(_Level[x][y]._sprite,states);
 
         }
      }
 }
+
 
 

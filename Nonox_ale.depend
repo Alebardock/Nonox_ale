@@ -1,7 +1,7 @@
 # depslib dependency file v1.0
-1683768193 source:c:\users\aleja\onedrive\escritorio\nonox\nonox_ale\main.cpp
+1683837525 source:c:\users\aleja\onedrive\escritorio\nonox\nonox_ale\main.cpp
 	<SFML/Graphics.hpp>
-	"../Celda.h"
+	"Nonograma.h"
 
 1683149019 c:\program files\codeblocks\sfml\include\sfml\graphics.hpp
 	<SFML/Window.hpp>
@@ -427,11 +427,11 @@
 	<stdlib.h>
 	<time.h>
 
-1683835716 source:c:\users\aleja\onedrive\escritorio\nonox\nonox_ale\nonograma.cpp
+1683837713 source:c:\users\aleja\onedrive\escritorio\nonox\nonox_ale\nonograma.cpp
 	<iostream>
 	"Nonograma.h"
 
-1683835669 c:\users\aleja\onedrive\escritorio\nonox\nonox_ale\nonograma.h
+1683837695 c:\users\aleja\onedrive\escritorio\nonox\nonox_ale\nonograma.h
 	<SFML/Graphics.hpp>
 	<cstdlib>
 	<cstring>

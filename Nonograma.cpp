@@ -130,7 +130,7 @@ Nivel::Nivel(){
 
 F =5;
 C=5;
-strcpy(_nombre, "non.jpg");
+
 
 
 }
@@ -142,27 +142,27 @@ void Nivel::traerNivel(short int F,short int C,const char* nombre){
     Celda reg;
     FILE *pCeldas;
 
-	pCeldas=fopen(nombre,"rb");
+	pCeldas=fopen(nombre,"rb+");
 	if(pCeldas==NULL){
 		cout<<"No se pudo abrir " <<nombre<<endl;
 	}
 	short int x=0;
-	short int y=0;
-	int cont =0;
-    while(fread(&reg, sizeof reg, 1,pCeldas)==1){
-          y++;
-          if(y%C-1==0){
-            y=0;
-            x++;
-          }
 
+    while(fread(&reg, sizeof reg, 1,pCeldas)==1){
+        reg.CargarCelda();
+
+        x++;
+    if (x==24)
+       { break;
+          }
+/*
     this->_Level[x][y].setX(reg.getX());
     this->_Level[x][y].setY(reg.getY());
     this->_Level[x][y].setVisible(reg.getVisible());
     this->_Level[x][y].setPixel(reg.getPixel());
-    cont++;
+    cont++;*/
     }
-cout<<cont<<" Registros leidos"<<endl;
+cout<<reg.getVisible()<<"  "<<endl;
 system("pause");
 fclose(pCeldas);
 }

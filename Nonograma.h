@@ -75,14 +75,14 @@ class Nivel {
         short int F;
         short int C;
         char* _nombre;
-        std::vector<std::vector <Celda>>_Level;
+
        /// std::vector<std::vector <Celda>>AyudaHor;
        /// std::vector<std::vector <Celda>>AyudaVer;
 
 
 
     public:
-
+         std::vector<std::vector <Celda>>_Level;
          void traerNivel(short int F,short int C,const char* nombre);
          void setNombre( char *n){
          strcpy(_nombre, n);

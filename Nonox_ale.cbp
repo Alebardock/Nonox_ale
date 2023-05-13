@@ -61,7 +61,10 @@
 		<Unit filename="../sfml-system-d-2.dll" />
 		<Unit filename="../sfml-window-2.dll" />
 		<Unit filename="../sfml-window-d-2.dll" />
-		<Unit filename="Nonograma.cpp" />
+		<Unit filename="Celda.cpp" />
+		<Unit filename="Celda.h" />
+		<Unit filename="Nivel.cpp" />
+		<Unit filename="Nivel.h" />
 		<Unit filename="Nonograma.h" />
 		<Unit filename="cb.bmp" />
 		<Unit filename="main.cpp" />

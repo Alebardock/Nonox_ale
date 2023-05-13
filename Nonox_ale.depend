@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1683937672 source:c:\users\aleja\onedrive\escritorio\nonox\nonox_ale\main.cpp
+1683943755 source:c:\users\aleja\onedrive\escritorio\nonox\nonox_ale\main.cpp
 	<SFML/Graphics.hpp>
 	"Nonograma.h"
 
@@ -427,11 +427,10 @@
 	<stdlib.h>
 	<time.h>
 
-1683937884 source:c:\users\aleja\onedrive\escritorio\nonox\nonox_ale\nonograma.cpp
-	<iostream>
+1683939159 source:c:\users\aleja\onedrive\escritorio\nonox\nonox_ale\nonograma.cpp
 	"Nonograma.h"
 
-1683937891 c:\users\aleja\onedrive\escritorio\nonox\nonox_ale\nonograma.h
+1683943154 c:\users\aleja\onedrive\escritorio\nonox\nonox_ale\nonograma.h
 	<SFML/Graphics.hpp>
 	<cstdlib>
 	<cstring>
@@ -441,4 +440,19 @@
 	<stdio.h>
 	<stdlib.h>
 	<time.h>
+	"Nivel.h"
+	"Celda.h"
+	"windows.h"
+
+1683938880 c:\users\aleja\onedrive\escritorio\nonox\nonox_ale\nivel.h
+	"Celda.h"
+
+1683939362 c:\users\aleja\onedrive\escritorio\nonox\nonox_ale\celda.h
+	"Nonograma.h"
+
+1683943755 source:c:\users\aleja\onedrive\escritorio\nonox\nonox_ale\celda.cpp
+	"Nonograma.h"
+
+1683942582 source:c:\users\aleja\onedrive\escritorio\nonox\nonox_ale\nivel.cpp
+	"Nonograma.h"
 

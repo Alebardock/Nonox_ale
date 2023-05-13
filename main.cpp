@@ -11,7 +11,9 @@ nivel1.setMatriz();
   sf::RenderWindow Ventana(sf::VideoMode(800, 600), "SFML window");
     sf::RenderStates states;
     Ventana.setFramerateLimit(60);
-    Imagen fondo("r(2).jpg");
+    Imagen fondo1("Fon2.jpg");
+    Imagen fondo2("Fon3.jpg");
+    fondo2._sprite.setPosition(185,35);
 
 
 
@@ -45,10 +47,23 @@ nivel1.setMatriz();
 
         // Draw the sprite
       ///nivel1.drawNivel(nivel1,Ventana,states,5,5);
-Ventana.draw(fondo);
-
+Ventana.draw(fondo1);
+Ventana.draw(fondo2);
 
        nivel1.drawNivel(Ventana,states);
+
+
+       if(sf::Keyboard::isKeyPressed(sf::Keyboard::Space)){
+
+        for (int x=0;x<5;x++){
+          for (int y=0;y<5;y++){
+            nivel1.fila[x][y].CambiarEstado();
+            }
+
+           }
+        }
+
+
 
        /// Ventana.draw(fondo);
 

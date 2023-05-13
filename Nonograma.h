@@ -9,9 +9,23 @@
 #include <stdlib.h>
 #include <time.h>
 using namespace std;
+class Imagen:public sf::Drawable
+{
 
 
-class Celda:public sf::Drawable
+public:
+    sf::Sprite _sprite;
+    sf::Texture _texture;
+    Imagen();
+    Imagen( const std::string &imagen);
+    void cargarImagen( const std::string &imagen);
+    void draw(sf::RenderTarget& target,sf::RenderStates states)const override;
+
+};
+
+
+
+class Celda
 {
 
     private:
@@ -20,15 +34,15 @@ class Celda:public sf::Drawable
     float _alto=50;
     short int _x;
     short int  _y;
-   ///(No _Visible=false/0 || _Visible =true/1) si esta oculto o no se presiono
-    bool _visible;
+
     ///(Ocupado por "X"/0 || Ocupado Pixel  =true/1)
     bool _pixel;
     ///los posibles 3 archivos para los sprites de estado de celda
 
     public:
-    sf::Sprite _sprite;
-    sf::Texture _texture;
+    Imagen cuadrito;
+    ///(No _Visible=false/0 || _Visible =true/1) si esta oculto o no se presiono
+    bool _visible;
     Celda();
     void setX(const short int x);
     void setY(const short int y);
@@ -36,7 +50,7 @@ class Celda:public sf::Drawable
     void setPixel(bool pixel);
 
     ///los posibles 3 archivos para los sprites de estado de celda
-    std::array<std:: string,3> celdaText={"R.png","r(2).jpg","R(1).png"};
+
 
     short int getX();
     short int getY();
@@ -45,30 +59,19 @@ class Celda:public sf::Drawable
 
 
 
-    void _setTexture();
-    void setSprite();
-    void setCelda(short int x,short int y,bool visible,bool pixel);
 
+     void CambiarEstado();
+    void setCelda(short int x,short int y,bool visible,bool pixel);
+   void SetTexture();
     void CargarCelda();
     void MostrarCelda();
     ///lee los booleanos que devuelve como resultado -1, 0 o 1
     short int estadoActual();
-    void draw(sf::RenderTarget& target,sf::RenderStates states)const override;
+    void drawCelda(sf::RenderTarget& target,sf::RenderStates states);
 };
 
 
-class Imagen:public sf::Drawable
-{
 
-sf::Sprite _sprite;
-sf::Texture _texture;
-public:
-
-    Imagen( const std::string &imagen);
-
-    void draw(sf::RenderTarget& target,sf::RenderStates states)const override;
-
-};
 class Nivel {
     private:
 
@@ -82,13 +85,14 @@ class Nivel {
 
 
     public:
-         std::vector<std::vector <Celda>>_Level;
-         void traerNivel(short int F,short int C,const char* nombre);
+         Celda fila[5][5];
+         void traerNivel(short int F,const char* nombre);
          void setNombre( char *n){
          strcpy(_nombre, n);
          }
          Nivel();
-         void drawNivel(Nivel nivel,sf::RenderWindow& Ventana,sf::RenderStates states,short int F,short int C);
+         void setMatriz();
+         void drawNivel(sf::RenderTarget& Ventana,sf::RenderStates states);
          void CargarNivel(int F,int C,const char* nombre);
 };
 

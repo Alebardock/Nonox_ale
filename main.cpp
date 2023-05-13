@@ -3,23 +3,24 @@
 
 int main()
 {  /* CrearRegistroCelda();*/
-    Imagen fondo("fondo2.png");
 
 
- Nivel nivel1;
-    nivel1.traerNivel(5,5,"Nivel1.dat");
 
-for (int x = 0;x<5;x++){
-    for (int y = 0;y<5;y++){
-
-    nivel1._Level[x][y].Celda::MostrarCelda();
-}
-
-}
-
-    sf::RenderWindow Ventana(sf::VideoMode(800, 600), "SFML window");
+Nivel nivel1;
+nivel1.setMatriz();
+  sf::RenderWindow Ventana(sf::VideoMode(800, 600), "SFML window");
     sf::RenderStates states;
     Ventana.setFramerateLimit(60);
+    Imagen fondo("r(2).jpg");
+
+
+
+
+
+
+
+
+
 
 
 
@@ -44,8 +45,12 @@ for (int x = 0;x<5;x++){
 
         // Draw the sprite
       ///nivel1.drawNivel(nivel1,Ventana,states,5,5);
+Ventana.draw(fondo);
 
-        Ventana.draw(fondo);
+
+       nivel1.drawNivel(Ventana,states);
+
+       /// Ventana.draw(fondo);
 
       // nivel1.drawNivel( Ventana,states,5,5);
         // Update the window

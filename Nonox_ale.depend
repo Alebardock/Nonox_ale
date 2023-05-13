@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1683842936 source:c:\users\aleja\onedrive\escritorio\nonox\nonox_ale\main.cpp
+1683937672 source:c:\users\aleja\onedrive\escritorio\nonox\nonox_ale\main.cpp
 	<SFML/Graphics.hpp>
 	"Nonograma.h"
 
@@ -427,11 +427,11 @@
 	<stdlib.h>
 	<time.h>
 
-1683842275 source:c:\users\aleja\onedrive\escritorio\nonox\nonox_ale\nonograma.cpp
+1683937884 source:c:\users\aleja\onedrive\escritorio\nonox\nonox_ale\nonograma.cpp
 	<iostream>
 	"Nonograma.h"
 
-1683842675 c:\users\aleja\onedrive\escritorio\nonox\nonox_ale\nonograma.h
+1683937891 c:\users\aleja\onedrive\escritorio\nonox\nonox_ale\nonograma.h
 	<SFML/Graphics.hpp>
 	<cstdlib>
 	<cstring>

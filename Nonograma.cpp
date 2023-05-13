@@ -8,6 +8,16 @@ _sprite.setTexture(_texture);
  }
 
 
+void Imagen::cargarImagen( const std::string &imagen){
+ _texture.loadFromFile(imagen);
+_sprite.setTexture(_texture);
+
+ }
+Imagen::Imagen( ){
+ _texture.loadFromFile("icono1.png");
+_sprite.setTexture(_texture);
+ }
+
  void  Imagen::draw(sf::RenderTarget& target,sf::RenderStates states)const
 {
 target.draw(_sprite,states);
@@ -21,8 +31,8 @@ Celda::Celda(){
     _y=0;
     _visible=false;
      _pixel=false;
-    _sprite.setPosition(_x,_y);
-  _setTexture();
+ SetTexture();
+  cuadrito._sprite.setPosition(getY(),getX());
 }
 
 void Celda::CargarCelda(){
@@ -42,8 +52,9 @@ short    int x;
    cout<<"ingrese si es pixel (0-1)"<<endl;
    cin>>pixel;
    this->_pixel=pixel;
-   this->_sprite.setPosition(_x,_y);
-    _setTexture();
+
+ SetTexture();
+ cuadrito._sprite.setPosition(getY(),getX());
 }
 void Celda::MostrarCelda(){
 
@@ -61,13 +72,15 @@ void Celda::setCelda(short int x,short int y,bool visible,bool pixel){
     this->_y=y;
     this->_visible=visible;
     this-> _pixel=pixel;
-    this->_sprite.setPosition(_x,_y);
-   _setTexture();
+
+    SetTexture();
+    cuadrito._sprite.setPosition(getY(),getX());
+
 }
 
 
 short int Celda::estadoActual(){
-    return (((-1 + 2 * (int)_pixel)) * ((int) _visible));
+    return (((-1 + 2 *(int)_pixel)) * ((int)_visible));
 }
 
 void Celda::setX(const short  int x)
@@ -77,7 +90,7 @@ void Celda::setY(const short int y)
 {_y=y;}
 
 void Celda::setVisible(bool visible)
-{_visible=visible;}
+{this->_visible=visible;}
 
 void Celda::setPixel(bool pixel)
 {_pixel=pixel;}
@@ -94,16 +107,44 @@ bool Celda::getVisible()
 bool Celda::getPixel()
 {return _pixel;}
 
+ void Celda::CambiarEstado()
+ {
+   if (_visible){
+    setVisible(false);
+   }
+   else if  (!_visible){
+   setVisible(true);
+   }
+
+ }
+
+void Celda::SetTexture(){
+ short int estadoActual1=estadoActual();
+ if (estadoActual1==-1){
+        cuadrito._texture.loadFromFile("icono1.png");
+    }
+    else if (estadoActual1==0){
+
+cuadrito._texture.loadFromFile("icono2.png");
+    }
+    else {
+
+   cuadrito._texture.loadFromFile("icono3.png");
+    }
+cuadrito._sprite.setTexture(cuadrito._texture);
 
 
 
-
-
-void  Celda::draw(sf::RenderTarget& target,sf::RenderStates states)const
-{
-    target.draw(this->_sprite,states);
 }
 
+
+void  Celda::drawCelda(sf::RenderTarget& target,sf::RenderStates states)
+{
+
+
+    target.draw(cuadrito._sprite,states);
+}
+/*
 void Celda::_setTexture(){
 short int estadoActual=this->estadoActual();
 
@@ -118,13 +159,13 @@ if (
               this->_texture.loadFromFile(celdaText[2]);
     }
 
-}
+}*/
 
-
+/*
 void Celda::setSprite(){
 _sprite.setTexture(_texture);
 }
-
+*/
 ///nivel ----------------------------------
 Nivel::Nivel(){
 
@@ -135,24 +176,27 @@ C=5;
 
 }
 
+/*
 
-
-void Nivel::traerNivel(short int F,short int C,const char* nombre){
+void Nivel::traerNivel(short int F,const char* nombre){
 
     Celda reg;
     FILE *pCeldas;
 
-	pCeldas=fopen(nombre,"rb+");
+	pCeldas=fopen(nombre,"rb");
 	if(pCeldas==NULL){
 		cout<<"No se pudo abrir " <<nombre<<endl;
 	}
 	short int x=0;
 
     while(fread(&reg, sizeof reg, 1,pCeldas)==1){
-        reg.CargarCelda();
-
+         this->_Level[x].setX(reg.getX());
+     this->_Level[x].setY(reg.getY());
+    this->_Level[x].setVisible(reg.getVisible());
+    this->_Level[x].setPixel(reg.getPixel());
+    cout<<reg.estadoActual()<<"  "<<endl;
         x++;
-    if (x==24)
+    if (x==F)
        { break;
           }
 /*
@@ -160,12 +204,12 @@ void Nivel::traerNivel(short int F,short int C,const char* nombre){
     this->_Level[x][y].setY(reg.getY());
     this->_Level[x][y].setVisible(reg.getVisible());
     this->_Level[x][y].setPixel(reg.getPixel());
-    cont++;*/
+    cont++;
     }
-cout<<reg.getVisible()<<"  "<<endl;
+
 system("pause");
 fclose(pCeldas);
-}
+}*/
 
 void Nivel::CargarNivel(int F,int C,const char* nombre){
 
@@ -190,13 +234,27 @@ void Nivel::CargarNivel(int F,int C,const char* nombre){
      }
 fclose(pCeldas);
 }
-void Nivel:: drawNivel(Nivel nivel,sf::RenderWindow& Ventana,sf::RenderStates states,short int F,short int C){
-     for (short int x=0;x<F;x++){
-		for (short int y=0;y<C;y++){
-nivel._Level[x][y].draw(Ventana,states);
-        }
-     }
-}
+void Nivel:: drawNivel(sf::RenderTarget& Ventana,sf::RenderStates states)
+{
 
+for (int x=0;x<5;x++){
+   for (int y=0;y<5;y++){
+
+    Ventana.draw(fila[x][y].cuadrito);
+
+ }
+ }
+
+}
+void Nivel::setMatriz(){
+
+
+ for (int x=0;x<5;x++){
+   for (int y=0;y<5;y++){
+    fila[x][y].CargarCelda();
+ }
+
+ }
+}
 
 

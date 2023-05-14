@@ -2,10 +2,7 @@
 #include "Nonograma.h"
 
 int main()
-{  /* CrearRegistroCelda();*/
-
-
-
+{
 Nivel nivel1;
 nivel1.setMatriz();
   sf::RenderWindow Ventana(sf::VideoMode(800, 600), "SFML window");
@@ -15,20 +12,8 @@ nivel1.setMatriz();
     Imagen fondo2("Fon3.jpg");
     fondo2._sprite.setPosition(185,35);
 
-
-
-
-
-
-
-
-
-
-
-
    /* if (!texture.loadFromFile("cb.bmp"))
         return EXIT_FAILURE;*/
-
 
 	// Start the game loop
     while (Ventana.isOpen())
@@ -37,7 +22,6 @@ nivel1.setMatriz();
         sf::Event event;
         while (Ventana.pollEvent(event))
         {
-            // Close window : exit
             if (event.type == sf::Event::Closed)
                 Ventana.close();
         }
@@ -54,23 +38,14 @@ Ventana.draw(fondo2);
 
 
        if(sf::Keyboard::isKeyPressed(sf::Keyboard::Space)){
-
         for (int x=0;x<5;x++){
           for (int y=0;y<5;y++){
             nivel1.fila[x][y].CambiarEstado();
             }
-
            }
         }
-
-
-
-       /// Ventana.draw(fondo);
-
-      // nivel1.drawNivel( Ventana,states,5,5);
         // Update the window
         Ventana.display();
     }
-
     return EXIT_SUCCESS;
 }

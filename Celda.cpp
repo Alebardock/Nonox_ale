@@ -141,26 +141,3 @@ _sprite.setTexture(_texture);
 {
 target.draw(_sprite,states);
 }
-
-/*
-void Celda::_setTexture(){
-short int estadoActual=this->estadoActual();
-
-if (
-    estadoActual==-1){
-  this->_texture.loadFromFile(celdaText[0]);
-    }
-    else if (estadoActual==0){
-  this->_texture.loadFromFile(celdaText[1]);
-    }
-    else {
-              this->_texture.loadFromFile(celdaText[2]);
-    }
-
-}*/
-
-/*
-void Celda::setSprite(){
-_sprite.setTexture(_texture);
-}
-*/

@@ -5,7 +5,6 @@ using namespace std;
 ///nivel ----------------------------------
 Nivel::Nivel(){
 F =5;
-C=5;
 }
 
 void Nivel::CargarNivel(int F,int C,const char* nombre){
@@ -39,19 +38,16 @@ for (int x=0;x<5;x++){
 
     Ventana.draw(fila[x][y].cuadrito);
 
- }
- }
-
+      }
+   }
 }
 void Nivel::setMatriz(){
-
 
  for (int x=0;x<5;x++){
    for (int y=0;y<5;y++){
     fila[x][y].CargarCelda();
- }
-
- }
+      }
+   }
 }
 
 /*

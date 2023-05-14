@@ -2,15 +2,8 @@
 #include "Celda.h"
 class Nivel {
     private:
-
         short int F;
-        short int C;
         char* _nombre;
-
-       /// std::vector<std::vector <Celda>>AyudaHor;
-       /// std::vector<std::vector <Celda>>AyudaVer;
-
-
 
     public:
          Celda fila[5][5];

@@ -85,13 +85,14 @@ bool Celda::getPixel()
 
  void Celda::CambiarEstado()
  {
-
-   if (_visible){
-    setVisible(false);
-   }
-   if  (!_visible){
+    if  (!_visible){
    setVisible(true);
    }
+
+   else if (_visible){
+    setVisible(false);
+   }
+
 
  }
 

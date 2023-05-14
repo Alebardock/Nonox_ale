@@ -5,6 +5,7 @@ using namespace std;
 ///nivel ----------------------------------
 Nivel::Nivel(){
 F =5;
+C=5;
 }
 
 void Nivel::CargarNivel(int F,int C,const char* nombre){
@@ -48,6 +49,16 @@ void Nivel::setMatriz(){
     fila[x][y].CargarCelda();
       }
    }
+}
+void Nivel::CambiarEstado(){
+       if(sf::Keyboard::isKeyPressed(sf::Keyboard::Space)){
+        for (int x=0;x<5;x++){
+          for (int y=0;y<5;y++){
+            this->fila[x][y].CambiarEstado();
+            this->fila[x][y].SetTexture();
+           }
+        }
+       }
 }
 
 /*

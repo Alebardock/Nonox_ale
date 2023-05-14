@@ -3,6 +3,7 @@
 class Nivel {
     private:
         short int F;
+        short int C;
         char* _nombre;
 
     public:
@@ -15,6 +16,7 @@ class Nivel {
          void setMatriz();
          void drawNivel(sf::RenderTarget& Ventana,sf::RenderStates states);
          void CargarNivel(int F,int C,const char* nombre);
+         void CambiarEstado();
 };
 
 

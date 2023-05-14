@@ -36,14 +36,7 @@ Ventana.draw(fondo2);
 
        nivel1.drawNivel(Ventana,states);
 
-
-       if(sf::Keyboard::isKeyPressed(sf::Keyboard::Space)){
-        for (int x=0;x<5;x++){
-          for (int y=0;y<5;y++){
-            nivel1.fila[x][y].CambiarEstado();
-            }
-           }
-        }
+nivel1.CambiarEstado();
         // Update the window
         Ventana.display();
     }

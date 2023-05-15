@@ -8,7 +8,7 @@ class Nivel {
 
     public:
          Celda fila[5][5];
-         void traerNivel(short int F,const char* nombre);
+         int  traerNivel(const char* nombre );
          void setNombre( char *n){
          strcpy(_nombre, n);
          }
@@ -17,10 +17,13 @@ class Nivel {
          void drawNivel(sf::RenderTarget& Ventana,sf::RenderStates states);
          void CargarNivel(int F,int C,const char* nombre);
          void CambiarEstado();
+
 };
 
-
-///NIVELES-----------------------------------------
+void SiSePrecionaLaCelda(sf::Mouse Raton,Celda Matrz[5][5]);
+int grabarEnDisco();
+int leerDeDisco();
+///NIVELES--------------------------        ---------------
 /*class Nivel1 :public Nivel{
 
 

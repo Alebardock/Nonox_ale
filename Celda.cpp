@@ -115,6 +115,15 @@ cuadrito._sprite.setTexture(cuadrito._texture);
 
 }
 
+ sf::Vector2<int>Celda::getArea(){
+
+
+sf::Vector2<int>Aux(this->_x,this->_y);
+
+
+return Aux;
+
+ }
 
 void  Celda::drawCelda(sf::RenderTarget& target,sf::RenderStates states)
 {

@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1684102607 source:c:\users\aleja\onedrive\escritorio\nonox\nonox_ale\main.cpp
+1684159516 source:c:\users\aleja\onedrive\escritorio\nonox\nonox_ale\main.cpp
 	<SFML/Graphics.hpp>
 	"Nonograma.h"
 
@@ -444,15 +444,17 @@
 	"Celda.h"
 	"windows.h"
 
-1684102607 c:\users\aleja\onedrive\escritorio\nonox\nonox_ale\nivel.h
+1684156632 c:\users\aleja\onedrive\escritorio\nonox\nonox_ale\nivel.h
 	"Celda.h"
 
-1684101247 c:\users\aleja\onedrive\escritorio\nonox\nonox_ale\celda.h
+1684120600 c:\users\aleja\onedrive\escritorio\nonox\nonox_ale\celda.h
 	"Nonograma.h"
 
-1684102350 source:c:\users\aleja\onedrive\escritorio\nonox\nonox_ale\celda.cpp
+1684120621 source:c:\users\aleja\onedrive\escritorio\nonox\nonox_ale\celda.cpp
 	"Nonograma.h"
 
-1684101360 source:c:\users\aleja\onedrive\escritorio\nonox\nonox_ale\nivel.cpp
+1684159516 source:c:\users\aleja\onedrive\escritorio\nonox\nonox_ale\nivel.cpp
 	"Nonograma.h"
+
+1684121838 source:c:\users\aleja\onedrive\escritorio\nonox\nonox_ale\mouse.cpp
 

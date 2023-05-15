@@ -1,7 +1,7 @@
 #pragma once
 
 #include "Nonograma.h"
-
+using namespace sf;
 class Imagen:public sf::Drawable
 {
 public:
@@ -22,6 +22,7 @@ private:
     ///(Ocupado por "X"/0 || Ocupado Pixel  =true/1)
     bool _pixel;
 
+
 public:
     Imagen cuadrito;
     ///(No _Visible=false/0 || _Visible =true/1) si esta oculto o no se presiono
@@ -31,6 +32,7 @@ public:
     void setY(const short int y);
     void setVisible(bool visible);
     void setPixel(bool pixel);
+
     void setCelda(short int x,short int y,bool visible,bool pixel);
     void SetTexture();
 
@@ -38,6 +40,7 @@ public:
     short int getY();
     bool getVisible();
     bool getPixel();
+    sf::Vector2< int>getArea();
     void CambiarEstado();
     short int estadoActual();
 

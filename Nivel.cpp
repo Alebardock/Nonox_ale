@@ -59,39 +59,77 @@ void Nivel::CambiarEstado(){
            }
         }
        }
-}
+}/*
+ void SiSePrecionaLaCelda(sf::Mouse Raton,Celda Matriz [5][5]){
+        for (int x=0;x<5;x++){
+        for (int y;y<5;y++){
 
-/*
+     if(Raton.isButtonPressed(sf::Mouse::Left)){
+ if(((int)Raton.getPosition().x+Raton.getPosition().y)/100>=Matriz[x][y].getX()+Matriz[x][y].getY()||
+    ((int)Raton.getPosition().x+Raton.getPosition().y)/100<=(Matriz[x][y].getX()+Matriz[x][y].getY()+100)){
+    Matriz[x][y].CambiarEstado();
+    Matriz[x][y].SetTexture();
+ }
+ }
+ }
+        }
+ }
 
-void Nivel::traerNivel(short int F,const char* nombre){
-
+*/
+int  Nivel::traerNivel(const char* nombre ){
     Celda reg;
     FILE *pCeldas;
-
 	pCeldas=fopen(nombre,"rb");
 	if(pCeldas==NULL){
-		cout<<"No se pudo abrir " <<nombre<<endl;
+		return -1;
 	}
-	short int x=0;
-
+	int cont =0;
+    int x=0;
+    int y=0;
     while(fread(&reg, sizeof reg, 1,pCeldas)==1){
-         this->_Level[x].setX(reg.getX());
-     this->_Level[x].setY(reg.getY());
-    this->_Level[x].setVisible(reg.getVisible());
-    this->_Level[x].setPixel(reg.getPixel());
-    cout<<reg.estadoActual()<<"  "<<endl;
-        x++;
-    if (x==F)
-       { break;
-          }
+            cont++;
+            this->fila[x][y].setCelda(reg.getX(),reg.getY(),reg.getVisible(),reg.getPixel());
+            y++;
+            if(y==5){
+               x++;
+               y=0;
+            }
+            if(x==5){
+                break ;
+                }
+   }
+ fclose(pCeldas);
+ return cont;
+}
 /*
-    this->_Level[x][y].setX(reg.getX());
-    this->_Level[x][y].setY(reg.getY());
-    this->_Level[x][y].setVisible(reg.getVisible());
-    this->_Level[x][y].setPixel(reg.getPixel());
-    cont++;
+    int grabarEnDisco(){
+        Celda reg;
+        FILE *pCeldas;
+        pCeldas=fopen("Nivel1.dat", "ab");
+        if(pCeldas==NULL) return -1;
+        int grabo=0;
+        for (int x=0;x<25;x++){
+            reg.CargarCelda();
+        grabo+=fwrite(&reg, sizeof reg,1, pCeldas);
+        }
+        fclose(pCeldas);
+        return grabo;
+    }*/
+
+
+   int leerDeDisco(){
+        Celda reg;
+        FILE *pCeldas;
+        pCeldas=fopen("Nivel1.dat", "rb");
+        if(pCeldas==NULL) return -1;
+        int leyo=0;
+        while (fread(&reg, sizeof reg,1, pCeldas)){
+                leyo++;
+        reg.MostrarCelda();
+
+        }
+        fclose(pCeldas);
+        return leyo;
     }
 
-system("pause");
-fclose(pCeldas);
-}*/
+

@@ -4,14 +4,24 @@
 int main()
 {
 Nivel nivel1;
-nivel1.setMatriz();
+
+
+nivel1.traerNivel("Nivel1.dat");
+
+///nivel1.setMatriz();
   sf::RenderWindow Ventana(sf::VideoMode(800, 600), "SFML window");
     sf::RenderStates states;
-    Ventana.setFramerateLimit(60);
+   sf::Mouse Raton;
+    Ventana.setFramerateLimit(90);
     Imagen fondo1("Fon2.jpg");
     Imagen fondo2("Fon3.jpg");
     fondo2._sprite.setPosition(185,35);
+    /*while(true){
 
+        std::cout<<Raton.getPosition().x<<" ";
+        std::cout<<Raton.getPosition().y;
+    }
+*/
    /* if (!texture.loadFromFile("cb.bmp"))
         return EXIT_FAILURE;*/
 
@@ -30,13 +40,16 @@ nivel1.setMatriz();
         Ventana.clear();
 
         // Draw the sprite
-      ///nivel1.drawNivel(nivel1,Ventana,states,5,5);
+
 Ventana.draw(fondo1);
 Ventana.draw(fondo2);
-
+       nivel1.CambiarEstado();
        nivel1.drawNivel(Ventana,states);
 
-nivel1.CambiarEstado();
+      /// SiSePrecionaLaCelda(Raton,nivel1.fila);
+
+
+
         // Update the window
         Ventana.display();
     }

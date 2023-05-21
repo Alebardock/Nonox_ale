@@ -14,31 +14,35 @@ public:
 };
 
 
-class Celda
+class Celda: public sf::Drawable
 {
 private:
-    short int _x;
-    short int  _y;
-    ///(Ocupado por "X"/0 || Ocupado Pixel  =true/1)
+    float _x;
+    float  _y;
+    ///(Ocupado por "X"/0 || Ocupado Pixel  =true1)
     bool _pixel;
+    bool _visible;
 
 
 public:
-    Imagen cuadrito;
+    sf::RectangleShape rectCelda;
     ///(No _Visible=false/0 || _Visible =true/1) si esta oculto o no se presiono
-    bool _visible;
+    bool _Activo;
     Celda();
-    void setX(const short int x);
-    void setY(const short int y);
+    void setX( float x);
+    void setY( float y);
     void setVisible(bool visible);
+    void setActivo(bool Activo);
     void setPixel(bool pixel);
 
-    void setCelda(short int x,short int y,bool visible,bool pixel);
-    void SetTexture();
+    void setCelda(float x, float y,bool Activo,bool pixel,bool visible);
+    void SetColorCelda();
 
-    short int getX();
-    short int getY();
+    float getX();
+    float getY();
+    void setVisible();
     bool getVisible();
+    bool getActivo();
     bool getPixel();
     sf::Vector2< int>getArea();
     void CambiarEstado();
@@ -47,7 +51,7 @@ public:
     void CargarCelda();
     void MostrarCelda();
     ///lee los booleanos que devuelve como resultado -1, 0 o 1
-    void drawCelda(sf::RenderTarget& target,sf::RenderStates states);
+    void draw(sf::RenderTarget& target,sf::RenderStates states)const override;
 };
 int CrearRegistroCelda();
 

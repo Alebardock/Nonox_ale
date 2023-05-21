@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1684159516 source:c:\users\aleja\onedrive\escritorio\nonox\nonox_ale\main.cpp
+1684552899 source:c:\users\aleja\onedrive\escritorio\nonox\nonox_ale\main.cpp
 	<SFML/Graphics.hpp>
 	"Nonograma.h"
 
@@ -430,7 +430,7 @@
 1683939159 source:c:\users\aleja\onedrive\escritorio\nonox\nonox_ale\nonograma.cpp
 	"Nonograma.h"
 
-1684101064 c:\users\aleja\onedrive\escritorio\nonox\nonox_ale\nonograma.h
+1684532462 c:\users\aleja\onedrive\escritorio\nonox\nonox_ale\nonograma.h
 	<SFML/Graphics.hpp>
 	<cstdlib>
 	<cstring>
@@ -443,18 +443,29 @@
 	"Nivel.h"
 	"Celda.h"
 	"windows.h"
+	"Matrix.h"
 
-1684156632 c:\users\aleja\onedrive\escritorio\nonox\nonox_ale\nivel.h
+1684539687 c:\users\aleja\onedrive\escritorio\nonox\nonox_ale\nivel.h
 	"Celda.h"
+	"Matrix.h"
+	<array>
 
-1684120600 c:\users\aleja\onedrive\escritorio\nonox\nonox_ale\celda.h
+1684538136 c:\users\aleja\onedrive\escritorio\nonox\nonox_ale\celda.h
 	"Nonograma.h"
 
-1684120621 source:c:\users\aleja\onedrive\escritorio\nonox\nonox_ale\celda.cpp
+1684551051 source:c:\users\aleja\onedrive\escritorio\nonox\nonox_ale\celda.cpp
 	"Nonograma.h"
 
-1684159516 source:c:\users\aleja\onedrive\escritorio\nonox\nonox_ale\nivel.cpp
+1684541373 source:c:\users\aleja\onedrive\escritorio\nonox\nonox_ale\nivel.cpp
 	"Nonograma.h"
 
-1684121838 source:c:\users\aleja\onedrive\escritorio\nonox\nonox_ale\mouse.cpp
+1684551051 source:c:\users\aleja\onedrive\escritorio\nonox\nonox_ale\mouse.cpp
+
+1684552582 c:\users\aleja\onedrive\escritorio\nonox\nonox_ale\matrix.h
+	"Nonograma.h"
+	"Celda.h"
+	<array>
+
+1684551616 source:c:\users\aleja\onedrive\escritorio\nonox\nonox_ale\matriz.cpp
+	"Nonograma.h"
 

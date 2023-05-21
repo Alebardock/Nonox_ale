@@ -5,17 +5,19 @@ Celda::Celda(){
 
     _x=0;
     _y=0;
-    _visible=false;
+    _Activo=false;
      _pixel=false;
- SetTexture();
-  cuadrito._sprite.setPosition(getY(),getX());
+     _visible=false;
+   SetColorCelda();
+    rectCelda.setPosition(getY(),getX());
 }
 
 void Celda::CargarCelda(){
-short    int x;
- short  int y;
-   bool visible;
+float  x;
+ float y;
+   bool Activo;
    bool pixel;
+   bool visible;
    cout<<"ingrese X"<<endl;
    cin>>x;
    this->_x=x;
@@ -23,14 +25,16 @@ short    int x;
    cin>>y;
    this->_y=y;
    cout<<"ingrese visibilidad (0-1)"<<endl;
-   cin>>visible;
-   this->_visible=visible;
+   cin>>Activo;
+   this->_Activo=Activo;
    cout<<"ingrese si es pixel (0-1)"<<endl;
    cin>>pixel;
    this->_pixel=pixel;
-
- SetTexture();
- cuadrito._sprite.setPosition(getY(),getX());
+   cout<<"ingrese si es una Activa (0-1)"<<endl;
+   cin>>visible;
+   this->_visible=visible;
+   SetColorCelda();
+    rectCelda.setPosition(getY(),getX());
 }
 void Celda::MostrarCelda(){
 
@@ -38,19 +42,21 @@ void Celda::MostrarCelda(){
    cout<<_x<<endl;
    cout<<"prop Y"<<endl;
    cout<<_y<<endl;
-   cout<<"prop visibilidad (0-1)"<<endl;
-   cout<<_visible<<endl;
+   cout<<"prop si es Activa(0-1)"<<endl;
+   cout<<_Activo<<endl;
    cout<<"prop si es pixel (0-1)"<<endl;
    cout<<_pixel<<endl;
+   cout<<"prop visibilidad (0-1))"<<endl;
+   cout<<_visible<<endl;
 }
-void Celda::setCelda(short int x,short int y,bool visible,bool pixel){
+void Celda::setCelda(float x, float y,bool Activo,bool pixel,bool visible){
     this->_x=x;
     this->_y=y;
-    this->_visible=visible;
+    this->_Activo=Activo;
     this-> _pixel=pixel;
-
-    SetTexture();
-    cuadrito._sprite.setPosition(getY(),getX());
+    this-> _visible=visible;
+    SetColorCelda();
+    rectCelda.setPosition(getY(),getX());
 
 }
 
@@ -58,27 +64,33 @@ void Celda::setCelda(short int x,short int y,bool visible,bool pixel){
 short int Celda::estadoActual(){
     return (((-1 + 2 *(int)_pixel)) * ((int)_visible));
 }
-
-void Celda::setX(const short  int x)
+ void Celda::setVisible(bool visible){
+ _visible=visible;
+ }
+ bool Celda::getVisible()
+{
+    return _visible;
+}
+void Celda::setX( float x)
 {_x=x;}
 
-void Celda::setY(const short int y)
+void Celda::setY( float y)
 {_y=y;}
 
-void Celda::setVisible(bool visible)
-{this->_visible=visible;}
+void Celda::setActivo(bool Activo)
+{this->_Activo=Activo;}
 
 void Celda::setPixel(bool pixel)
 {_pixel=pixel;}
 
-short int Celda::getX()
+ float Celda::getX()
 {return _x;}
 
-short int Celda::getY()
+ float Celda::getY()
 {return _y;}
 
-bool Celda::getVisible()
-{return _visible;}
+bool Celda::getActivo()
+{return _Activo;}
 
 bool Celda::getPixel()
 {return _pixel;}
@@ -86,51 +98,32 @@ bool Celda::getPixel()
  void Celda::CambiarEstado()
  {
     if  (!_visible){
-   setVisible(true);
+   setActivo(true);
    }
-
-   else if (_visible){
-    setVisible(false);
-   }
-
 
  }
 
-void Celda::SetTexture(){
+void Celda::SetColorCelda(){
  short int estadoActual1=estadoActual();
  if (estadoActual1==-1){
-        cuadrito._texture.loadFromFile("icono1.png");
+    rectCelda.setFillColor( sf::Color::Red );
     }
     else if (estadoActual1==0){
 
-cuadrito._texture.loadFromFile("icono2.png");
+    rectCelda.setFillColor( sf::Color::Blue );
     }
     else {
 
-   cuadrito._texture.loadFromFile("icono3.png");
+ rectCelda.setFillColor( sf::Color::Green );
     }
-cuadrito._sprite.setTexture(cuadrito._texture);
-
-
 
 }
 
- sf::Vector2<int>Celda::getArea(){
-
-
-sf::Vector2<int>Aux(this->_x,this->_y);
-
-
-return Aux;
-
- }
-
-void  Celda::drawCelda(sf::RenderTarget& target,sf::RenderStates states)
+ void  Celda::draw(sf::RenderTarget& target,sf::RenderStates states)const
 {
-
-
-    target.draw(cuadrito._sprite,states);
+target.draw(rectCelda,states);
 }
+
  Imagen::Imagen( const std::string &imagen){
  _texture.loadFromFile(imagen);
 _sprite.setTexture(_texture);
@@ -143,7 +136,7 @@ _sprite.setTexture(_texture);
 
  }
 Imagen::Imagen( ){
- _texture.loadFromFile("icono1.png");
+ _texture.loadFromFile("icono11.png");
 _sprite.setTexture(_texture);
  }
 

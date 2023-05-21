@@ -1,28 +1,26 @@
 #pragma once
 #include "Celda.h"
-class Nivel {
+#include "Matrix.h"
+#include <array>
+class Nivel :public Matrix{
     private:
-        short int F;
-        short int C;
-        char* _nombre;
 
     public:
-         Celda fila[5][5];
-         int  traerNivel(const char* nombre );
-         void setNombre( char *n){
-         strcpy(_nombre, n);
-         }
+         int Vidas=3;
+        std::array<Matrix,3>Niveles;
          Nivel();
-         void setMatriz();
+         void setNivelesManual();
          void drawNivel(sf::RenderTarget& Ventana,sf::RenderStates states);
-         void CargarNivel(int F,int C,const char* nombre);
+         int CargarNiveles(const char* nombre);
+
          void CambiarEstado();
 
 };
-
-void SiSePrecionaLaCelda(sf::Mouse Raton,Celda Matrz[5][5]);
+void CreaeNiveles(const char* nombre);
+/*
+bool SiSePrecionaLaCelda(sf::Mouse & Raton,Celda Matrz[5][5]);
 int grabarEnDisco();
-int leerDeDisco();
+int leerDeDisco();*/
 ///NIVELES--------------------------        ---------------
 /*class Nivel1 :public Nivel{
 

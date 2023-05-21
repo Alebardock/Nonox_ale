@@ -63,6 +63,8 @@
 		<Unit filename="../sfml-window-d-2.dll" />
 		<Unit filename="Celda.cpp" />
 		<Unit filename="Celda.h" />
+		<Unit filename="Matrix.h" />
+		<Unit filename="Matriz.cpp" />
 		<Unit filename="Mouse.cpp" />
 		<Unit filename="Nivel.cpp" />
 		<Unit filename="Nivel.h" />

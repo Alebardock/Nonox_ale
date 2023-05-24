@@ -1,65 +1,94 @@
 #include <SFML/Graphics.hpp>
 #include "Nonograma.h"
+#include "Temporalizador.h"
 
 int main()
 {
-Celda Mate;
-Mate.CargarCelda();
+     Matrix nivelPrueba;
+     nivelPrueba.CargarMatrix();
+     nivelPrueba.MostrarMatrix();
+    sf::RenderWindow ventana(sf::VideoMode(800, 600), "SFML window");
 
-
-system("pause");
-///nivel1.traerNivel("Nivel1.dat");
-
-///nivel1.setMatriz();
-sf::RectangleShape cuadrito(sf::Vector2f(25,25));
-cuadrito.setPosition(50,50);
-
-
-  sf::RenderWindow Ventana(sf::VideoMode(800, 600), "SFML window");
     sf::RenderStates states;
     sf::Mouse Raton;
 
-    Ventana.setFramerateLimit(90);
+
+
+
+    ventana.setFramerateLimit(90);
     Imagen fondo1("Fon2.jpg");
     Imagen fondo2("Fon3.jpg");
+    Temporalizador temporalizador(1, 30);
     fondo2._sprite.setPosition(185,35);
 
-    /*while(true){
 
-        std::cout<<Raton.getPosition().x<<" ";
-        std::cout<<Raton.getPosition().y;
-    }
-*/
-   /* if (!texture.loadFromFile("cb.bmp"))
-        return EXIT_FAILURE;*/
 
-	// Start the game loop
-    while (Ventana.isOpen())
-    {
-        // Process events
+        bool nivelGanado = false;
+
+    while (ventana.isOpen()) {
+
         sf::Event event;
-        while (Ventana.pollEvent(event))
-        {
-            if (event.type == sf::Event::Closed)
-                Ventana.close();
+        while (ventana.pollEvent(event)) {
+            if (event.type == sf::Event::Closed) {
+                ventana.close();
+            }
+            if (event.type == sf::Event::KeyPressed) {
+                nivelGanado = true;
+            }
+        }
+
+
+     if (!nivelGanado) {
+            temporalizador.actualizar(); // Actualizar el temporizador
+
+            if (temporalizador.tiempoTerminado()) {
+                std::cout << "¡Tiempo agotado!" << std::endl;
+                // Aquí puedes realizar las acciones correspondientes cuando se acabe el tiempo
+                // por ejemplo, terminar el juego o reiniciar el nivel.
+                temporalizador.reiniciar(); // Reiniciar el temporizador para la próxima partida
+            }
+
+            if (temporalizador.segundosTranscurridos() >= 60) {
+                int minutos = temporalizador.segundosTranscurridos() / 60;
+                int segundos = temporalizador.segundosTranscurridos() % 60;
+                std::cout << "¡Has ganado! Tiempo: " << minutos << " minutos " << segundos << " segundos" << std::endl;
+                // Aquí puedes realizar las acciones correspondientes cuando se complete el nivel correctamente
+                // y obtener el tiempo transcurrido para usarlo en el puntaje final.
+                nivelGanado = true;
+            }
         }
 
         // Clear screen
-        Ventana.clear();
+        ventana.clear();
 
-        // Draw the sprite
+     ventana.draw(fondo1);
+     ventana.draw(fondo2);
+     nivelPrueba.siCliquea(Raton,ventana);
+     nivelPrueba.drawMatrix(ventana);
 
-Ventana.draw(fondo1);
-Ventana.draw(fondo2);/*
-for (int x=0;x<12;x++){
-    for (int y=0;y<12;y++){
-        if (Mate._Matriz[x][y].getActivo()){
-              Ventana.draw(Mate._Matriz[x][y]);
-}
+
+
+
+        temporalizador.dibujar(ventana); // Dibujar el temporizador en la ventana
+
+        ventana.display();
+
+        if (nivelGanado) {
+            // El nivel se ha ganado antes de tiempo, detener el reloj y mostrar el tiempo restante
+           temporalizador.parar(); // Detener el temporizador
+
+
+
+            std::cout << "¡Nivel ganado antes de tiempo! Tiempo restante: " << (temporalizador.getTiempoRestante()/ 60)<< " minutos " << (temporalizador.getTiempoRestante()%60) << " segundos" << std::endl;
+
+            // Aquí puedes realizar las acciones adicionales cuando se gana antes de tiempo
+            // por ejemplo, otorgar puntos extra, mostrar una animación, etc.
+
+            //sf::sleep(sf::seconds(1)); // Pausa de 1 segundo antes de continuar el bucle
+        }
     }
-    }*/
-        // Update the window
-        Ventana.display();
-    }
-    return EXIT_SUCCESS;
+
+    return 0;
+
+
 }

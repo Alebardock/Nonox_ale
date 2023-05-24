@@ -5,6 +5,7 @@
 		<Option title="Nonox_ale" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
+		<Option extended_obj_names="1" />
 		<Build>
 			<Target title="Debug">
 				<Option output="bin/Debug/Nonox_ale" prefix_auto="1" extension_auto="1" />
@@ -65,10 +66,15 @@
 		<Unit filename="Celda.h" />
 		<Unit filename="Matrix.h" />
 		<Unit filename="Matriz.cpp" />
+		<Unit filename="MenuNonox.cpp" />
+		<Unit filename="MenuNonox.h" />
 		<Unit filename="Mouse.cpp" />
 		<Unit filename="Nivel.cpp" />
 		<Unit filename="Nivel.h" />
 		<Unit filename="Nonograma.h" />
+		<Unit filename="Nonox.h" />
+		<Unit filename="Temporalizador.cpp" />
+		<Unit filename="Temporalizador.h" />
 		<Unit filename="cb.bmp" />
 		<Unit filename="main.cpp" />
 		<Extensions>

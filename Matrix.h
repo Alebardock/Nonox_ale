@@ -3,7 +3,6 @@
 #include "Celda.h"
 #include <array>
 class Matrix{
-
 private:
 
 
@@ -13,5 +12,7 @@ Matrix();
 void CargarMatrix();
 void MostrarMatrix();
 void setMatrix( Matrix auxi);
-void siCliquea(sf::Mouse Raton, sf::RenderWindow Ventana);
+void siCliquea(sf::Mouse Raton, sf::RenderWindow & Ventana);
+void drawMatrix(sf::RenderWindow & ventana);
+
 };

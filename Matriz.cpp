@@ -48,7 +48,7 @@ void Matrix:: MostrarMatrix(){
          }
      }
 }
-void Matrix::siCliquea(sf::Mouse Raton, sf::RenderWindow Ventana){
+void Matrix::siCliquea(sf::Mouse Raton, sf::RenderWindow & Ventana){
 
     for (int x=0;x<12;x++){
        for (int y=0;y<12;y++){
@@ -69,3 +69,18 @@ if (cuadrito.getPosition().x <=Raton.getPosition(Ventana).x
  }
 }
 
+void Matrix::drawMatrix(sf::RenderWindow & ventana){
+
+
+ for (int x=0;x<12;x++){
+    for (int y=0;y<12;y++){
+           if (_Matriz[x][y].getActivo()){
+            ventana.draw(_Matriz[x][y].rectCelda);
+           }
+
+  }
+
+ }
+
+
+}

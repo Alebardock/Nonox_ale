@@ -469,3 +469,121 @@
 1684551616 source:c:\users\aleja\onedrive\escritorio\nonox\nonox_ale\matriz.cpp
 	"Nonograma.h"
 
+1684798936 source:c:\users\daniel\documents\github\nonox\celda.cpp
+	"Nonograma.h"
+
+1684798936 c:\users\daniel\documents\github\nonox\nonograma.h
+	<SFML/Graphics.hpp>
+	<cstdlib>
+	<cstring>
+	<iostream>
+	<array>
+	<vector>
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	"Nivel.h"
+	"Celda.h"
+	"windows.h"
+	"Matrix.h"
+
+1684798936 c:\users\daniel\documents\github\nonox\nivel.h
+	"Celda.h"
+	"Matrix.h"
+	<array>
+
+1684798936 c:\users\daniel\documents\github\nonox\celda.h
+	"Nonograma.h"
+
+1684798936 c:\users\daniel\documents\github\nonox\matrix.h
+	"Nonograma.h"
+	"Celda.h"
+	<array>
+
+1684810179 source:c:\users\daniel\documents\github\nonox\main.cpp
+	<SFML/Graphics.hpp>
+	"Nonograma.h"
+	"Temporalizador.h"
+
+1684798936 source:c:\users\daniel\documents\github\nonox\matriz.cpp
+	"Nonograma.h"
+
+1684798936 source:c:\users\daniel\documents\github\nonox\mouse.cpp
+
+1684798936 source:c:\users\daniel\documents\github\nonox\nivel.cpp
+	"Nonograma.h"
+
+1684810035 source:c:\users\daniel\documents\github\nonox\temporalizador.cpp
+	<iostream>
+	"Temporalizador.h"
+
+1684808858 c:\users\daniel\documents\github\nonox\temporalizador.h
+	<SFML/Graphics.hpp>
+
+1684808067 source:c:\users\daniel\documents\github\nonox\menunonox.cpp
+	<iostream>
+	"MenuNonox.h"
+
+1684807933 c:\users\daniel\documents\github\nonox\menunonox.h
+	"Nonox.h"
+
+1684808229 c:\users\daniel\documents\github\nonox\nonox.h
+
+1684886550 source:c:\users\aleja\onedrive\escritorio\nueva carpeta\juego_rgp\nonox\nonox\celda.cpp
+	"Nonograma.h"
+
+1684875190 c:\users\aleja\onedrive\escritorio\nueva carpeta\juego_rgp\nonox\nonox\nonograma.h
+	<SFML/Graphics.hpp>
+	<cstdlib>
+	<cstring>
+	<iostream>
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	"Nivel.h"
+	"Celda.h"
+	"windows.h"
+	"Matrix.h"
+
+1684874131 c:\users\aleja\onedrive\escritorio\nueva carpeta\juego_rgp\nonox\nonox\nivel.h
+	"Celda.h"
+	"Matrix.h"
+	<array>
+
+1684882828 c:\users\aleja\onedrive\escritorio\nueva carpeta\juego_rgp\nonox\nonox\celda.h
+	"Nonograma.h"
+
+1684886787 c:\users\aleja\onedrive\escritorio\nueva carpeta\juego_rgp\nonox\nonox\matrix.h
+	"Nonograma.h"
+	"Celda.h"
+	<array>
+
+1684886769 source:c:\users\aleja\onedrive\escritorio\nueva carpeta\juego_rgp\nonox\nonox\matriz.cpp
+	"Nonograma.h"
+
+1684872987 source:c:\users\aleja\onedrive\escritorio\nueva carpeta\juego_rgp\nonox\nonox\menunonox.cpp
+	<iostream>
+	"MenuNonox.h"
+
+1684872987 c:\users\aleja\onedrive\escritorio\nueva carpeta\juego_rgp\nonox\nonox\menunonox.h
+	"Nonox.h"
+
+1684872987 c:\users\aleja\onedrive\escritorio\nueva carpeta\juego_rgp\nonox\nonox\nonox.h
+
+1684803807 source:c:\users\aleja\onedrive\escritorio\nueva carpeta\juego_rgp\nonox\nonox\mouse.cpp
+
+1684881494 source:c:\users\aleja\onedrive\escritorio\nueva carpeta\juego_rgp\nonox\nonox\nivel.cpp
+	"Nonograma.h"
+
+1684872988 source:c:\users\aleja\onedrive\escritorio\nueva carpeta\juego_rgp\nonox\nonox\temporalizador.cpp
+	<iostream>
+	"Temporalizador.h"
+
+1684872988 c:\users\aleja\onedrive\escritorio\nueva carpeta\juego_rgp\nonox\nonox\temporalizador.h
+	<SFML/Graphics.hpp>
+
+1684887100 source:c:\users\aleja\onedrive\escritorio\nueva carpeta\juego_rgp\nonox\nonox\main.cpp
+	<SFML/Graphics.hpp>
+	"Nonograma.h"
+	"Temporalizador.h"
+
